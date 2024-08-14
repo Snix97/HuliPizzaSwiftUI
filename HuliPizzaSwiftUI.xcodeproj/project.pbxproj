@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		522510F22C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */; };
-		522510F42C6CE73600823B70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F32C6CE73600823B70 /* ContentView.swift */; };
+		522510F42C6CE73600823B70 /* OrderListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F32C6CE73600823B70 /* OrderListScreen.swift */; };
 		522510F62C6CE73800823B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522510F52C6CE73800823B70 /* Assets.xcassets */; };
 		522510F92C6CE73800823B70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522510F82C6CE73800823B70 /* Preview Assets.xcassets */; };
 		522511032C6CE73800823B70 /* HuliPizzaSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511022C6CE73800823B70 /* HuliPizzaSwiftUITests.swift */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		522510EE2C6CE73600823B70 /* HuliPizzaSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuliPizzaSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuliPizzaSwiftUIApp.swift; sourceTree = "<group>"; };
-		522510F32C6CE73600823B70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		522510F32C6CE73600823B70 /* OrderListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListScreen.swift; sourceTree = "<group>"; };
 		522510F52C6CE73800823B70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		522510F82C6CE73800823B70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		522510FE2C6CE73800823B70 /* HuliPizzaSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuliPizzaSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */,
-				522510F32C6CE73600823B70 /* ContentView.swift */,
+				522510F32C6CE73600823B70 /* OrderListScreen.swift */,
 				522510F52C6CE73800823B70 /* Assets.xcassets */,
 				522510F72C6CE73800823B70 /* Preview Content */,
 			);
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				522510F42C6CE73600823B70 /* ContentView.swift in Sources */,
+				522510F42C6CE73600823B70 /* OrderListScreen.swift in Sources */,
 				522510F22C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct OrderListScreen: View {
     var orders:[Int] = [1,2,3,4,6]
     
     var body: some View {
         VStack {
             
-            
             ZStack {
                 Image("surfBanner")
                     .resizable()
                     .scaledToFit()
-                    Text("Huli Pizza Company")
+                Text("Huli Pizza Company")
                     .background()
             }
+                    
             Image(systemName: orders.isEmpty ? "cart" : "cart.circle.fill")
             HStack {
                 //If no spacer here text will be centered
@@ -64,7 +64,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            
+        OrderListScreen()
     }
 }
