@@ -14,6 +14,7 @@
 		522511032C6CE73800823B70 /* HuliPizzaSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511022C6CE73800823B70 /* HuliPizzaSwiftUITests.swift */; };
 		5225110D2C6CE73800823B70 /* HuliPizzaSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225110C2C6CE73800823B70 /* HuliPizzaSwiftUIUITests.swift */; };
 		5225110F2C6CE73800823B70 /* HuliPizzaSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225110E2C6CE73800823B70 /* HuliPizzaSwiftUIUITestsLaunchTests.swift */; };
+		5225111C2C6D2A3400823B70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5225111B2C6D2A3300823B70 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		522511082C6CE73800823B70 /* HuliPizzaSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuliPizzaSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5225110C2C6CE73800823B70 /* HuliPizzaSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuliPizzaSwiftUIUITests.swift; sourceTree = "<group>"; };
 		5225110E2C6CE73800823B70 /* HuliPizzaSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuliPizzaSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5225111B2C6D2A3300823B70 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		522510E52C6CE73600823B70 = {
 			isa = PBXGroup;
 			children = (
+				5225111B2C6D2A3300823B70 /* README.md */,
 				522510F02C6CE73600823B70 /* HuliPizzaSwiftUI */,
 				522511012C6CE73800823B70 /* HuliPizzaSwiftUITests */,
 				5225110B2C6CE73800823B70 /* HuliPizzaSwiftUIUITests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5225111C2C6D2A3400823B70 /* README.md in Resources */,
 				522510F92C6CE73800823B70 /* Preview Assets.xcassets in Resources */,
 				522510F62C6CE73800823B70 /* Assets.xcassets in Resources */,
 			);
