@@ -20,8 +20,14 @@ struct OrderListScreen: View {
                 Text("Huli Pizza Company")
                     .background()
             }
-                    
+            Label{
+                Text(59.99,format: .currency(code: "GBP"))
+            }
+            icon:{
             Image(systemName: orders.isEmpty ? "cart" : "cart.circle.fill")
+
+           }
+            
             HStack {
                 //If no spacer here text will be centered
                 //Spacer() //Makes trailing text
@@ -34,13 +40,18 @@ struct OrderListScreen: View {
                     HStack(alignment:.firstTextBaseline){
                         Text("Your Order item \(order)")
                         Spacer()
-                        Text(19.90, format: .currency(code: "USD"))
+                        Text(19.90, format: .currency(code: "GBP"))
                     }
                 }
                 
             }
             VStack {
-                Image(systemName: "rectangle.fill").font(.largeTitle)
+                //UIImage will be an optional
+                if let image = UIImage(named:"0_lg") {
+                    Image(uiImage: image)
+                } else {
+                    Image("surfboard_lg")
+                }
                 Text("Margherita")
                 Text("Description")
             }
@@ -48,7 +59,11 @@ struct OrderListScreen: View {
                 //The id: \.self part is required so that SwiftUI can identify array elements uniquely
                 ForEach(1...25,id:\.self){ item in
                     HStack(alignment:.top,spacing:15) {
-                        Image(systemName:"\(item).circle.fill").font(.largeTitle)
+                        if let image = UIImage(named:"\(item)_sm") {
+                            Image(uiImage: image)
+                        } else {
+                            Image("surfboard_sm")
+                        }
                         VStack(alignment:.leading) {
                             Text("Margherita")
                             Text("Description")
