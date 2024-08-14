@@ -19,6 +19,9 @@
 		522511262C6D632900823B70 /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511252C6D632900823B70 /* MenuRowView.swift */; };
 		522511282C6D634100823B70 /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511272C6D634100823B70 /* OrderRowView.swift */; };
 		5225112A2C6D637400823B70 /* HeaderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511292C6D637400823B70 /* HeaderRowView.swift */; };
+		5225112C2C6D66F700823B70 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112B2C6D66F700823B70 /* HeaderView.swift */; };
+		5225112E2C6D694700823B70 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112D2C6D694700823B70 /* OrderView.swift */; };
+		522511302C6D6B6500823B70 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112F2C6D6B6500823B70 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		522511252C6D632900823B70 /* MenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
 		522511272C6D634100823B70 /* OrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRowView.swift; sourceTree = "<group>"; };
 		522511292C6D637400823B70 /* HeaderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRowView.swift; sourceTree = "<group>"; };
+		5225112B2C6D66F700823B70 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5225112D2C6D694700823B70 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		5225112F2C6D6B6500823B70 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +114,12 @@
 				522511212C6D62CA00823B70 /* MenuItemView.swift */,
 				522511252C6D632900823B70 /* MenuRowView.swift */,
 				522511272C6D634100823B70 /* OrderRowView.swift */,
+				5225112D2C6D694700823B70 /* OrderView.swift */,
 				522511292C6D637400823B70 /* HeaderRowView.swift */,
 				522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */,
 				522510F32C6CE73600823B70 /* OrderListScreen.swift */,
+				5225112F2C6D6B6500823B70 /* MenuView.swift */,
+				5225112B2C6D66F700823B70 /* HeaderView.swift */,
 				522510F52C6CE73800823B70 /* Assets.xcassets */,
 				522510F72C6CE73800823B70 /* Preview Content */,
 			);
@@ -274,11 +283,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				522511282C6D634100823B70 /* OrderRowView.swift in Sources */,
+				5225112E2C6D694700823B70 /* OrderView.swift in Sources */,
 				522511222C6D62CA00823B70 /* MenuItemView.swift in Sources */,
 				522510F42C6CE73600823B70 /* OrderListScreen.swift in Sources */,
+				522511302C6D6B6500823B70 /* MenuView.swift in Sources */,
 				522511262C6D632900823B70 /* MenuRowView.swift in Sources */,
 				522510F22C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift in Sources */,
 				5225112A2C6D637400823B70 /* HeaderRowView.swift in Sources */,
+				5225112C2C6D66F700823B70 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

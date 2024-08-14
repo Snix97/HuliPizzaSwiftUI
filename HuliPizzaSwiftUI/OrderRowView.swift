@@ -7,12 +7,27 @@
 
 import SwiftUI
 
-struct OrderRowview: View {
+struct OrderRowView: View {
+    var order:Int
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        VStack {
+            HStack {
+                Text("Your Order item \(order)")
+                Spacer()
+            }
+            HStack(alignment:.firstTextBaseline){
+                Text(1, format:.number)
+                Text(19.90, format: .currency(code: "GBP"))
+                Spacer()
+                Text(19.90, format: .currency(code: "GBP"))
+                    .fontWeight(.semibold)
+            }
+        }
     }
 }
 
-#Preview {
-    OrderRowview()
+struct OrderRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        OrderRowView(order: 1)
+    }
 }

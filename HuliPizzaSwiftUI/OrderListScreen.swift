@@ -14,11 +14,7 @@ struct OrderListScreen: View {
         VStack {
             
             ZStack {
-                Image("surfBanner")
-                    .resizable()
-                    .scaledToFit()
-                Text("Huli Pizza Company")
-                    .background()
+                HeaderView()
             }
             Label{
                 Text(59.99,format: .currency(code: "GBP"))
@@ -57,7 +53,7 @@ struct OrderListScreen: View {
             }
             ScrollView{
                 //The id: \.self part is required so that SwiftUI can identify array elements uniquely
-                ForEach(1...25,id:\.self){ item in
+                ForEach(1...15,id:\.self){ item in
                     HStack(alignment:.top,spacing:15) {
                         if let image = UIImage(named:"\(item)_sm") {
                             Image(uiImage: image)
