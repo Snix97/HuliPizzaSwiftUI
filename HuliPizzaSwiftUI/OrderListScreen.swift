@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct OrderListScreen: View {
-    var orders:[Int] = [1,2,3,4,6]
+    
+    var orders = [1, 2, 3]
     
     var body: some View {
         VStack {
-            
+           // OrderView()
             ZStack {
                 HeaderView()
             }

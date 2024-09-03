@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5218F3692C8735D5004F2BAF /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511272C6D634100823B70 /* OrderRowView.swift */; };
+		5218F36B2C8735DD004F2BAF /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511212C6D62CA00823B70 /* MenuItemView.swift */; };
+		5218F36C2C8735E1004F2BAF /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112F2C6D6B6500823B70 /* MenuView.swift */; };
+		5218F36D2C8735E4004F2BAF /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511252C6D632900823B70 /* MenuRowView.swift */; };
+		5218F36E2C8735EA004F2BAF /* HeaderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522511292C6D637400823B70 /* HeaderRowView.swift */; };
+		5218F36F2C8735F2004F2BAF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112B2C6D66F700823B70 /* HeaderView.swift */; };
+		5218F3702C8735F5004F2BAF /* HuliPizzaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */; };
+		5218F3712C8735F9004F2BAF /* OrderListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F32C6CE73600823B70 /* OrderListScreen.swift */; };
 		522510F22C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */; };
 		522510F42C6CE73600823B70 /* OrderListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522510F32C6CE73600823B70 /* OrderListScreen.swift */; };
 		522510F62C6CE73800823B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522510F52C6CE73800823B70 /* Assets.xcassets */; };
@@ -22,6 +30,7 @@
 		5225112C2C6D66F700823B70 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112B2C6D66F700823B70 /* HeaderView.swift */; };
 		5225112E2C6D694700823B70 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112D2C6D694700823B70 /* OrderView.swift */; };
 		522511302C6D6B6500823B70 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112F2C6D6B6500823B70 /* MenuView.swift */; };
+		52C0BB702C873576004B17FD /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112D2C6D694700823B70 /* OrderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,15 +120,11 @@
 		522510F02C6CE73600823B70 /* HuliPizzaSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				522511212C6D62CA00823B70 /* MenuItemView.swift */,
-				522511252C6D632900823B70 /* MenuRowView.swift */,
-				522511272C6D634100823B70 /* OrderRowView.swift */,
-				5225112D2C6D694700823B70 /* OrderView.swift */,
-				522511292C6D637400823B70 /* HeaderRowView.swift */,
+				52C0BB6F2C8733E2004B17FD /* Orders */,
+				52C0BB6E2C8733BC004B17FD /* Menu */,
+				52C0BB6D2C8733A3004B17FD /* Header */,
 				522510F12C6CE73600823B70 /* HuliPizzaSwiftUIApp.swift */,
 				522510F32C6CE73600823B70 /* OrderListScreen.swift */,
-				5225112F2C6D6B6500823B70 /* MenuView.swift */,
-				5225112B2C6D66F700823B70 /* HeaderView.swift */,
 				522510F52C6CE73800823B70 /* Assets.xcassets */,
 				522510F72C6CE73800823B70 /* Preview Content */,
 			);
@@ -150,6 +155,35 @@
 			);
 			path = HuliPizzaSwiftUIUITests;
 			sourceTree = "<group>";
+		};
+		52C0BB6D2C8733A3004B17FD /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				522511292C6D637400823B70 /* HeaderRowView.swift */,
+				5225112B2C6D66F700823B70 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		52C0BB6E2C8733BC004B17FD /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				522511212C6D62CA00823B70 /* MenuItemView.swift */,
+				5225112F2C6D6B6500823B70 /* MenuView.swift */,
+				522511252C6D632900823B70 /* MenuRowView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		52C0BB6F2C8733E2004B17FD /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				5225112D2C6D694700823B70 /* OrderView.swift */,
+				522511272C6D634100823B70 /* OrderRowView.swift */,
+			);
+			name = Orders;
+			path = HuliPizzaSwiftUI/Orders;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -298,7 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5218F3712C8735F9004F2BAF /* OrderListScreen.swift in Sources */,
+				5218F36C2C8735E1004F2BAF /* MenuView.swift in Sources */,
+				5218F36B2C8735DD004F2BAF /* MenuItemView.swift in Sources */,
+				5218F3692C8735D5004F2BAF /* OrderRowView.swift in Sources */,
+				5218F3702C8735F5004F2BAF /* HuliPizzaSwiftUIApp.swift in Sources */,
 				522511032C6CE73800823B70 /* HuliPizzaSwiftUITests.swift in Sources */,
+				5218F36D2C8735E4004F2BAF /* MenuRowView.swift in Sources */,
+				52C0BB702C873576004B17FD /* OrderView.swift in Sources */,
+				5218F36E2C8735EA004F2BAF /* HeaderRowView.swift in Sources */,
+				5218F36F2C8735F2004F2BAF /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
