@@ -9,7 +9,8 @@ import SwiftUI
 
 struct OrderListScreen: View {
     
-    var orders = [1, 2, 3, 4, 6]
+    @State private var orders: [OrderItem] = testOrders
+    
     //State shouldn't be changed externally hence add private
     @State private var showOrders: Bool = false
     
@@ -18,15 +19,21 @@ struct OrderListScreen: View {
         VStack {
             HeaderView()
                 .shadow(radius: 5)
-            Button{
-                showOrders.toggle()
-            } label:{
-                Image(systemName: showOrders ? "cart" : "menucard")
-                    .font(.title2)
+            HStack {
+                Text("\(orders.count) Orders")
+                Spacer()
+                Button{
+                    showOrders.toggle()
+                } label:{
+                    Image(systemName: showOrders ? "cart" : "menucard")
+                        .font(.title2)
+                }
             }
-            .foregroundStyle(.white)
+            .foregroundStyle(.white).font(.title2)
+            
             if showOrders {
-                OrderView(orders: orders)
+                //$ sign means var is binding
+                OrderView(orders: $orders)
             } else {
                 MenuItemView()
                     .padding(5)
