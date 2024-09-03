@@ -11,7 +11,7 @@ struct HeaderView: View {
     var body: some View {
         ZStack(alignment:.bottomTrailing) {
             Image("surfBanner")
-                .resizable()
+                .resizable() //Needs to be first
                 .scaledToFit()
                 .ignoresSafeArea()
             Text("Huli Pizza Company")
