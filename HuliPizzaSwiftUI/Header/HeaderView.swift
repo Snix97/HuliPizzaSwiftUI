@@ -16,7 +16,7 @@ struct HeaderView: View {
                 .ignoresSafeArea()
             Text("Huli Pizza Company")
                 .font(.custom("Georgia", size: 34, relativeTo: .title))
-                .foregroundColor(Color("Sky"))
+               // .foregroundColor(Color("Sky"))
                 .foregroundStyle(.regularMaterial)
                 .fontWeight(.semibold)
         }

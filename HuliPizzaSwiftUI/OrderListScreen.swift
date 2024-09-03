@@ -16,12 +16,13 @@ struct OrderListScreen: View {
         
         VStack {
             HeaderView()
+                .shadow(radius: 5)
             if showOrders {
                 OrderView(orders: orders)
             } else {
                 MenuItemView()
                     .padding(5)
-                    .background(Color("Sky"), in:RoundedRectangle(cornerRadius: 12))
+                    .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
                 MenuView()
             }
 

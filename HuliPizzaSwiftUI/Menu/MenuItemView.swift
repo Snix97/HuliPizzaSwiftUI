@@ -16,6 +16,9 @@ struct MenuItemView: View {
                 //These 2 produce the sam effect but clipshape gives you more properties
                 //  .clipShape(RoundedRectangle(cornerRadius:10))
                     .cornerRadius(10)
+                
+                // Use shadows after cornerRadius and clipShape
+                    .shadow(color:.teal, radius: 5, x:10, y:10)
             } else {
                 Image("surfboard_lg")
             }
@@ -23,8 +26,8 @@ struct MenuItemView: View {
                 Text("Margherita")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color("Surf"))
-                   // .foregroundStyle(.ultraThickMaterial)
+                   // .foregroundColor(Color("Surf"))
+                    .foregroundStyle(.ultraThickMaterial)
                     .padding(.leading)
                     .background(.linearGradient(colors: [Color("Surf"),  Color("Sky").opacity(0.1)], startPoint: .leading, endPoint: .trailing), in:Capsule())
                 
