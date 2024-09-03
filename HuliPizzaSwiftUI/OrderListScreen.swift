@@ -10,13 +10,21 @@ import SwiftUI
 struct OrderListScreen: View {
     
     var orders = [1, 2, 3, 4, 6]
-    var showOrders: Bool = false
+    //State shouldn't be changed externally hence add private
+    @State private var showOrders: Bool = false
     
     var body: some View {
         
         VStack {
             HeaderView()
                 .shadow(radius: 5)
+            Button{
+                showOrders.toggle()
+            } label:{
+                Image(systemName: showOrders ? "cart" : "menucard")
+                    .font(.title2)
+            }
+            .foregroundStyle(.white)
             if showOrders {
                 OrderView(orders: orders)
             } else {
