@@ -21,7 +21,7 @@ struct MenuRowView: View {
             }
             VStack(alignment:.leading) {
                 Text("Margherita")
-                
+                RatingsView(rating: 4)
             }
             Spacer()
         }
