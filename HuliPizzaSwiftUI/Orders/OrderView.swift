@@ -8,37 +8,38 @@
 import SwiftUI
 
 struct OrderView: View {
-    var orders:[Int] = [1,2,3,4,6]
+    var orders:[Int]
     var body: some View {
-        VStack{
-            HeaderView()
+        VStack {
             Label{
                 Text(59.99,format: .currency(code: "GBP"))
             }
-        icon:{
-            Image(systemName: orders.isEmpty ? "cart" : "cart.circle.fill")
-            
-        }
-            HStack {
+            icon:{
+                Image(systemName: orders.isEmpty ? "cart" : "cart.circle.fill")
                 
+            }
+            HStack {
+                //If no spacer here text will be centered
+                //Spacer() //Makes trailing text
+                
+                Spacer() //Makes Leading text
                 Text("Order Pizza")
                     .font(.title)
-                Spacer()
+                Spacer()  //Makes Leading text
             }
             ScrollView{
-                ForEach(orders,id:\.self){ order in
-                    
+                ForEach(orders,id:\.self){ order in                    OrderRowView(order: order)
                 }
                 
             }
             
         }
-    }
+        }
 }
 
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView()
+        OrderView(orders: [1, 2, 3, 4, 6])
     }
 }

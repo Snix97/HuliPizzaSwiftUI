@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuView: View {
     var body: some View {
         ScrollView{
+            //The id: \.self part is required so that SwiftUI can identify array elements uniquely
             ForEach(1...25,id:\.self){ item in
                 MenuRowView(item: item)
             }
