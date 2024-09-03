@@ -12,11 +12,11 @@ struct HeaderView: View {
         ZStack(alignment:.bottomTrailing) {
             Image("surfBanner")
                 .resizable()
-               .scaledToFit()
+                .scaledToFit()
                 .ignoresSafeArea()
             Text("Huli Pizza Company")
                 .font(.custom("Georgia", size: 34, relativeTo: .title))
-                //.foregroundColor(.white)
+                .foregroundColor(Color("Sky"))
                 .foregroundStyle(.regularMaterial)
                 .fontWeight(.semibold)
         }

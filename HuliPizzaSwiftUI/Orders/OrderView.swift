@@ -20,20 +20,22 @@ struct OrderView: View {
             }
             HStack {
                 //If no spacer here text will be centered
-                //Spacer() //Makes trailing text
-                
-                Spacer() //Makes Leading text
+                // Spacer() //Makes Leading text
                 Text("Order Pizza")
                     .font(.title)
-                Spacer()  //Makes Leading text
+                Spacer()  //Makes trailing text
             }
             ScrollView{
                 ForEach(orders,id:\.self){ order in                    OrderRowView(order: order)
+                        .padding(.bottom, 5)
+                        .padding([.leading, .trailing], 7)
                 }
                 
             }
             
         }
+        .background(Color("Surf"))
+        
         }
 }
 
