@@ -26,6 +26,7 @@ struct OrderListScreen: View {
             //No param here it gets directly to the view due to using environment variable
             HeaderView()
                 .shadow(radius: 5)
+                .environment(\ .colorScheme, .light )
             HStack {
                 Text("\(orders.orderItems.count) Orders")
                 Spacer()
@@ -47,8 +48,6 @@ struct OrderListScreen: View {
                     .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
                 MenuView(menu: menu, selectedItem: $selectedItem)
             }
-
-            Spacer()
         }
         .padding()
         .background(.linearGradient(colors: [.cyan, Color("Surf"), Color("Sky"), .white], startPoint: .topLeading, endPoint: .bottom))
