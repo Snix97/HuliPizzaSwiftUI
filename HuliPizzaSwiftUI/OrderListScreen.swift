@@ -11,7 +11,9 @@ struct OrderListScreen: View {
     
     var menu: [MenuItem] //Static it never changes
     
-    @State private var orders: [OrderItem] = testOrders
+    //@State private var orders: [OrderItem] = testOrders
+    
+    @StateObject var orders: OrderModel = OrderModel()
     
     //State shouldn't be changed externally hence add private
     @State private var showOrders: Bool = false
@@ -24,7 +26,7 @@ struct OrderListScreen: View {
             HeaderView()
                 .shadow(radius: 5)
             HStack {
-                Text("\(orders.count) Orders")
+                Text("\(orders.orderItems.count) Orders")
                 Spacer()
                 Button{
                     showOrders.toggle()
@@ -37,9 +39,9 @@ struct OrderListScreen: View {
             
             if showOrders {
                 //$ sign means var is binding
-                OrderView(orders: $orders)
+                OrderView(orders: orders)
             } else {
-                MenuItemView(item: $selectedItem)
+                MenuItemView(item: $selectedItem, orders: orders)
                     .padding(5)
                     .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
                 MenuView(menu: menu, selectedItem: $selectedItem)

@@ -11,6 +11,7 @@ struct MenuItemView: View {
     
     @State private var addedIem: Bool = false
     @Binding var item: MenuItem
+    @ObservedObject var orders: OrderModel
     
     var body: some View {
         VStack {
@@ -53,12 +54,14 @@ struct MenuItemView: View {
             }
             Button {
                 addedIem = true
+                orders.addOrder(item, quantity: 1)
             } label: { //Label here acts like a HStack
                 Spacer()
-                Text(12.99, format: .currency(code: "GBP")).bold()
+                Text(item.price, format: .currency(code: "GBP")).bold()
                 Image(systemName: addedIem ? "cart.fill.badge.plus" : "cart.badge.plus")
                 Spacer()
             }
+            .disabled(item.id < 0) //To restrict button action if nothing selected
             .padding()
             .background(.red, in:Capsule())
             .foregroundStyle(.white)
@@ -69,6 +72,6 @@ struct MenuItemView: View {
 
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemView(item: .constant(testMenuItem))
+        MenuItemView(item: .constant(testMenuItem), orders: OrderModel())
     }
 }
