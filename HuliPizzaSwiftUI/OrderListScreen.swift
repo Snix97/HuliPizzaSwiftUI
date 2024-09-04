@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrderListScreen: View {
     
-    var menu: [MenuItem]
+    var menu: [MenuItem] //Static it never changes
     
     @State private var orders: [OrderItem] = testOrders
     
