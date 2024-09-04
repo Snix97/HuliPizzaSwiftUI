@@ -16,6 +16,8 @@ struct OrderListScreen: View {
     //State shouldn't be changed externally hence add private
     @State private var showOrders: Bool = false
     
+    @State private var selectedItem: MenuItem = noMenuItem
+    
     var body: some View {
         
         VStack {
@@ -37,10 +39,10 @@ struct OrderListScreen: View {
                 //$ sign means var is binding
                 OrderView(orders: $orders)
             } else {
-                MenuItemView()
+                MenuItemView(item: $selectedItem)
                     .padding(5)
                     .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
-                MenuView(menu: menu)
+                MenuView(menu: menu, selectedItem: $selectedItem)
             }
 
             Spacer()
