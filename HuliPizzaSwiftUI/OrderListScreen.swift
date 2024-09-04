@@ -23,6 +23,7 @@ struct OrderListScreen: View {
     var body: some View {
         
         VStack {
+            //No param here it gets directly to the view due to using environment variable
             HeaderView()
                 .shadow(radius: 5)
             HStack {
@@ -51,6 +52,7 @@ struct OrderListScreen: View {
         }
         .padding()
         .background(.linearGradient(colors: [.cyan, Color("Surf"), Color("Sky"), .white], startPoint: .topLeading, endPoint: .bottom))
+        .environmentObject(orders)
     }
 }
 
