@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OrderListScreen: View {
     
+    var menu: [MenuItem]
+    
     @State private var orders: [OrderItem] = testOrders
     
     //State shouldn't be changed externally hence add private
@@ -38,7 +40,7 @@ struct OrderListScreen: View {
                 MenuItemView()
                     .padding(5)
                     .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
-                MenuView()
+                MenuView(menu: menu)
             }
 
             Spacer()
@@ -50,6 +52,6 @@ struct OrderListScreen: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderListScreen()
+        OrderListScreen(menu: MenuModel().menu)
     }
 }

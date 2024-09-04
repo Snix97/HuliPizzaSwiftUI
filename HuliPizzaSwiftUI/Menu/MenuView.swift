@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    var menu: [MenuItem]
+    
     var body: some View {
         ScrollView{
             //The id: \.self part is required so that SwiftUI can identify array elements uniquely
-            ForEach(1...25,id:\.self){ item in
+            ForEach(menu){ item in
                 MenuRowView(item: item)
             }
         }
@@ -20,6 +23,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(menu: MenuModel().menu)
     }
 }

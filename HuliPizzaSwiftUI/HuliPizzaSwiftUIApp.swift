@@ -11,7 +11,7 @@ import SwiftUI
 struct HuliPizzaSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            OrderListScreen()
+            OrderListScreen(menu: MenuModel().menu)
         }
     }
 }
