@@ -29,6 +29,9 @@ struct OrderRowView: View {
 struct OrderRowView_Previews: PreviewProvider {
     static var previews: some View {
         OrderRowView(order: .constant(testOrderItem))
+        
+        //Add this to preview a SwiftUI layout without a device frame when select the Selectable option in the bottom left of preview screen
+            .previewLayout(.sizeThatFits)
     }
 }
 

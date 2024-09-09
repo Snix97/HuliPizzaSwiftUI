@@ -60,5 +60,6 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView().environmentObject(OrderModel()) //Modifier on the end of HeaderView
+            .previewLayout(.sizeThatFits)
     }
 }

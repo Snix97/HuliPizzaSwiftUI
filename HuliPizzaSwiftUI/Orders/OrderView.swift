@@ -65,5 +65,6 @@ struct OrderView_Previews: PreviewProvider {
         //OrderView(orders: .constant(testOrders))
         
         OrderView(orders: OrderModel())
+            .previewLayout(.sizeThatFits)
     }
 }
