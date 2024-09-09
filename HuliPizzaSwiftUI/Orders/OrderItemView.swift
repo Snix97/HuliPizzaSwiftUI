@@ -13,6 +13,8 @@ struct OrderItemView: View {
     @State private var quantity = 1
     @State private var doubleIngredient: Bool = false
     @State private var pizzaCrust: PizzaCrust
+    @State private var name: String = ""
+    @State private var comments: String = ""
     
     //Views don't usually have init but used here to get pizzacrust data out of the Binding orderItem data we already have.  We want to initialise a value from within the struct and pizzaCrust is a State value
     init(orderItem: Binding<OrderItem>) {
@@ -23,14 +25,16 @@ struct OrderItemView: View {
     }
     
     var body: some View {
-        //User interaction toggleSwitch
+        //User interactions toggle, stepper and picker
         VStack {
-            Toggle(isOn: $doubleIngredient, label: {
-                Text(("Double Ingredients") + (doubleIngredient ? " Yes" : " No"))
-                
-                Stepper(value: $quantity, in: 1...10) {
-                    Text("\(quantity )  " + (quantity == 1 ? "Pizza" : "Pizzas"))
-                }
+            TextField("Name", text:$name)
+                .textFieldStyle(.roundedBorder)
+            
+            Toggle(isOn: $doubleIngredient) {
+                Text("Double Ingredients" + (doubleIngredient ? " Yes" : " No"))}
+            Stepper(value:$quantity, in:1...10){
+                Text("\(quantity) " + (quantity == 1 ? "pizza" : "pizzas"))
+            }
                 Picker(selection: $pizzaCrust) {
                     ForEach(PizzaCrust.allCases, id:\.self) { crust in
                         Text(crust.rawValue).tag(crust)
@@ -43,11 +47,20 @@ struct OrderItemView: View {
                 // All pizzas have a default crust in MenuItem so want the picker to initially show this OrderItem has a preferred crust - what user chooses
                 .pickerStyle(MenuPickerStyle())
 
+                VStack {
+                    Text("Comments")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    TextEditor(text: $comments)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+                // Add shadow to help give border to TextEditor
+                .shadow(radius: 1)
                 Spacer()
-                
-            })
+                .padding()
+            }
         }
-    }
+        
 }
 
 #Preview {
