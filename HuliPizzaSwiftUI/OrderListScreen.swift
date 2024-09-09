@@ -27,18 +27,8 @@ struct OrderListScreen: View {
             HeaderView()
                 .shadow(radius: 5)
                 .environment(\ .colorScheme, .light )
-            HStack {
-                Text("\(orders.orderItems.count) Orders")
-                Spacer()
-                Button{
-                    showOrders.toggle()
-                } label:{
-                    Image(systemName: showOrders ? "cart" : "menucard")
-                        .font(.title2)
-                }
-            }
-            .foregroundStyle(.white).font(.title2)
-            
+            StatusBarView(showOrders: $showOrders)
+    
             if showOrders {
                 //$ sign means var is binding
                 OrderView(orders: orders)
