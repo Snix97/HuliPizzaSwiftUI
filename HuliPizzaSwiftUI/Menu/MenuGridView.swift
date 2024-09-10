@@ -24,33 +24,34 @@ struct MenuGridView: View {
     @State var selectedItem: MenuItem = noMenuItem
     
     var body: some View {
-        
-                LazyVGrid(columns: columnLayout2) {
-                    ForEach(favourites.sorted(), id:\.self  ) { item in
-                        FavoriteTileView(menuItem: menu(id: item))
-                        
-                            .onLongPressGesture {
-                                if let index = favourites.firstIndex(where: { $0 == item }) {
-                                    favourites.remove(at: index)
-                                }
-                            }
+        VStack {
+            LazyVGrid(columns: columnLayout2) {
+            ForEach(favourites.sorted(), id:\.self  ) { item in
+                FavoriteTileView(menuItem: menu(id: item))
+                    .onLongPressGesture {
+                        if let index = favourites.firstIndex(where: { $0 == item }) {
+                            favourites.remove(at: index)
+                        }
                     }
                 }
-                
-                Spacer()
-                Text(selectedItem.name)
-                ScrollView {
+            }
+            Spacer()
+            Text(selectedItem.name)
+            ScrollView {
                 LazyVGrid(columns: columnLayout) {
                     ForEach(menu ) { item in
                         if !favourites.contains(item.id) {
-                            
                             MenuItemTileView(menuItem: item)
-                            
+                        
                             // order matters here! doubleTap, singleTap then long press
                                 .onTapGesture(count: 2) {
                                     if !favourites.contains(item.id) {
-                                        favourites.append(item.id)
-                                    }
+                                        //Animation conected to specific action
+                                        //withAnimation(.easeInOut(duration: 4.0)) {
+                                            favourites.append(item.id)
+                                        //}
+                                        
+                                   }
                                 }
                             
                                 .onTapGesture {
@@ -63,7 +64,9 @@ struct MenuGridView: View {
                     }
                 }
             }
-        
+        } 
+        //Animation isn't linked to State changes, it has its own triggers. This is only 1 way! Another is to set it on a specific action e.g the tap - see above.
+        .animation(.easeOut(duration: 0.6), value: favourites)
     }
 }
 
