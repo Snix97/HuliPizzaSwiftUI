@@ -16,7 +16,8 @@ struct OrderView: View {
         VStack {
             NavigationStack {
                 //Orders is @binding so need the dollar sign
-                List($orders.orderItems ){ $order in
+                List{ 
+                    ForEach($orders.orderItems ){ $order in
                     NavigationLink(value: order) {
                         OrderRowView(order: $order)
                             .padding(4)
@@ -27,20 +28,29 @@ struct OrderView: View {
                     }.navigationDestination(for: OrderItem.self) { order in
                         OrderDetailView(orderItem: $order, presentSheet: .constant(false), newOrder: .constant(false))
                     }.navigationTitle("Your order")
+                }
+                    
+                    // Lists don’t take modifiers but ForEach does so include it under List to enable move and delete
+                    .onDelete(perform: { indexSet in
+                        orders.orderItems.remove(atOffsets: indexSet)
+                    })
+                    
+                    .onMove{ source, destination in
+                        orders.orderItems.move(fromOffsets: source, toOffset: destination)
+                    }
                     
                 }
                 
             }
-            .padding(.top, 70)
-            
-            Button("Delete Order") {
-                if !orders.orderItems.isEmpty {
-                    orders.removeLast()
-                }
-            }
-            .padding(5)
-            .background(.regularMaterial, in: Capsule())
-            .padding(7)
+//            .padding(.top, 70)
+//            Button("Delete Order") {
+//                if !orders.orderItems.isEmpty {
+//                    orders.removeLast()
+//                }
+//            }
+//            .padding(5)
+//            .background(.regularMaterial, in: Capsule())
+//            .padding(7)
         }
         .background(.regularMaterial)
     }
