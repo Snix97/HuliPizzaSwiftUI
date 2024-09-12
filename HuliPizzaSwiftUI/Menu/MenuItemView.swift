@@ -13,6 +13,8 @@ struct MenuItemView: View {
     @Binding var item: MenuItem
     @State var presentAlert: Bool = false
     @ObservedObject var orders: OrderModel
+    @State private var newOrder: Bool = true
+    @State private var order = noOrderItem
     
     var body: some View {
         VStack {
@@ -54,6 +56,8 @@ struct MenuItemView: View {
                 
             }
             Button {
+                //Here we dont care about the id
+                order = OrderItem(id: -999, item: item)
                 presentAlert = true
             } label: { //Label here acts like a HStack
                 Spacer()
@@ -68,19 +72,27 @@ struct MenuItemView: View {
             .padding(5)
             
             //if an alert has an empty closure {} you get a default ok button to dismiss
-            .alert("Buy a \(item.name)", isPresented: $presentAlert) {
-                Button("No", role: .cancel) {}
-                
-                //Alert to buy 1 or 2 pizzas
-                Button("Yes") {
-                    addedIem = true
-                    orders.addOrder(item, quantity: 1)
-                }
-                Button("Make it a double!") {
-                    addedIem = true
-                    orders.addOrder(item, quantity: 2)
-                }
+//            .alert("Buy a \(item.name)", isPresented: $presentAlert) {
+//                Button("No", role: .cancel) {}
+//                
+//                //Alert to buy 1 or 2 pizzas
+//                Button("Yes") {
+//                    addedIem = true
+//                    orders.addOrder(item, quantity: 1)
+//                }
+//                Button("Make it a double!") {
+//                    addedIem = true
+//                    orders.addOrder(item, quantity: 2)
+//                }
+//            }
+            
+            //Show a fancy sheet to create order, gives more details than just the alert
+            .sheet(isPresented: $presentAlert) {
+                addedIem = true
+            } content: {
+                OrderDetailView(orderItem: $order, presentSheet: $presentAlert, newOrder: $newOrder)
             }
+            
         }
     }
 }
