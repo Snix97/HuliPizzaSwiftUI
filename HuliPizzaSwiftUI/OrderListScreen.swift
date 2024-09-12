@@ -30,16 +30,16 @@ struct OrderListScreen: View {
                     .shadow(radius: 5)
                     .environment(\ .colorScheme, .light )
                 StatusBarView(showOrders: $showOrders, presentGrid: $presentGrid)
-                MenuItemView(item: $selectedItem, orders: orders)
-                    .padding(5)
-                    .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
-                
-                if presentGrid {
-                    MenuGridView(selectedItem: $selectedItem, menu: menu)
-                } else {
-                    MenuView(menu: menu, selectedItem: $selectedItem)
-                }
-               
+//                MenuItemView(item: $selectedItem, orders: orders)
+//                    .padding(5)
+//                    .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
+//                
+//                if presentGrid {
+//                    MenuGridView(selectedItem: $selectedItem, menu: menu)
+//                } else {
+//                    MenuView(menu: menu, selectedItem: $selectedItem)
+//                }
+               MenuViewTwo(menu: menu)
             } .tabItem {
                 Label("Menu", systemImage: "list.bullet")
             }
