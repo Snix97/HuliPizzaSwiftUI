@@ -11,6 +11,7 @@ struct MenuItemView: View {
     
     @State private var addedIem: Bool = false
     @Binding var item: MenuItem
+    @State var presentAlert: Bool = false
     @ObservedObject var orders: OrderModel
     
     var body: some View {
@@ -53,8 +54,7 @@ struct MenuItemView: View {
                 
             }
             Button {
-                addedIem = true
-                orders.addOrder(item, quantity: 1)
+                presentAlert = true
             } label: { //Label here acts like a HStack
                 Spacer()
                 Text(item.price, format: .currency(code: "GBP")).bold()
@@ -66,6 +66,21 @@ struct MenuItemView: View {
             .background(.red, in:Capsule())
             .foregroundStyle(.white)
             .padding(5)
+            
+            //if an alert has an empty closure {} you get a default ok button to dismiss
+            .alert("Buy a \(item.name)", isPresented: $presentAlert) {
+                Button("No", role: .cancel) {}
+                
+                //Alert to buy 1 or 2 pizzas
+                Button("Yes") {
+                    addedIem = true
+                    orders.addOrder(item, quantity: 1)
+                }
+                Button("Make it a double!") {
+                    addedIem = true
+                    orders.addOrder(item, quantity: 2)
+                }
+            }
         }
     }
 }
