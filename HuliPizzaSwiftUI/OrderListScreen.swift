@@ -20,6 +20,9 @@ struct OrderListScreen: View {
     
     @State private var selectedItem: MenuItem = noMenuItem
     
+    //To swict between menuView and menuGridview
+    @State private var presentGrid: Bool = false
+    
     var body: some View {
         
         VStack {
@@ -27,7 +30,7 @@ struct OrderListScreen: View {
             HeaderView()
                 .shadow(radius: 5)
                 .environment(\ .colorScheme, .light )
-            StatusBarView(showOrders: $showOrders)
+            StatusBarView(showOrders: $showOrders, presentGrid: $presentGrid)
     
             if showOrders {
                 //$ sign means var is binding
@@ -36,7 +39,13 @@ struct OrderListScreen: View {
                 MenuItemView(item: $selectedItem, orders: orders)
                     .padding(5)
                     .background(.thinMaterial, in:RoundedRectangle(cornerRadius: 12))
-                MenuView(menu: menu, selectedItem: $selectedItem)
+                
+                if presentGrid {
+                    MenuGridView(selectedItem: $selectedItem, menu: menu)
+                } else {
+                    MenuView(menu: menu, selectedItem: $selectedItem)
+                }
+               
             }
         }
         .padding()

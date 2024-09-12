@@ -11,8 +11,7 @@ struct MenuGridView: View {
     
     @State private var favourites: [Int] = [-1]
     
-    // Not private
-    @State var selectedItem: MenuItem = noMenuItem
+    @Binding var selectedItem: MenuItem
     
     //Keep collection of animations used to for coordinating animations between different views.
     @Namespace private var nSpace
@@ -34,6 +33,11 @@ struct MenuGridView: View {
             ForEach(favourites.sorted(), id:\.self  ) { item in
                 FavoriteTileView(menuItem: menu(id: item))
                     .matchedGeometryEffect(id: item, in: nSpace)
+                    .onTapGesture {
+                        selectedItem = menu(id: item)
+                    }
+                
+                
                     .onLongPressGesture {
                         if let index = favourites.firstIndex(where: { $0 == item }) {
                             favourites.remove(at: index)
@@ -78,5 +82,5 @@ struct MenuGridView: View {
 }
 
 #Preview {
-    MenuGridView(menu: MenuModel().menu)
+    MenuGridView(selectedItem: .constant(testMenuItem), menu: MenuModel().menu)
 }
