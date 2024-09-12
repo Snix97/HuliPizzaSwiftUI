@@ -73,7 +73,8 @@ struct MenuDetailView: View {
             HStack{
                 Picker(selection: $pizzaCrust ) {
                         ForEach(PizzaCrust.allCases,id:\.self){crust in
-                            Text(crust.rawValue).tag(crust)
+                            //Change tag to be optional as PizzaCrust already is to prevent bug
+                            Text(crust.rawValue).tag(crust as PizzaCrust?)
                         }
                     } label: {
                         Text("Pizza Crust")
@@ -162,6 +163,14 @@ struct MenuDetailView: View {
 
         }
         .background(.linearGradient(colors: [.white,Color("Sky"),Color("Surf").opacity(0.3),Color("Surf")], startPoint: .topLeading, endPoint: .bottom))
+        
+        //When item changes its quantity it will always be 1
+        .onChange(of: item) {
+            quantity = 1
+            
+            //Do this to aid dealing with optionals, defaults to newYork
+            pizzaCrust = item?.crust ?? PizzaCrust.newYork
+        }
     }
     
 }

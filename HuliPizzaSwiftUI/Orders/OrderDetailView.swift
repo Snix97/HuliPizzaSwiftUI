@@ -12,6 +12,7 @@ import SwiftUI
 struct OrderDetailView: View {
     @Binding var orderItem:OrderItem
     @Binding var presentSheet:Bool
+    @State private var presentAlert:Bool = false
     @Binding var newOrder:Bool
     @State private var quantity:Int
     @State private var doubleIngredient:Bool
@@ -70,6 +71,7 @@ struct OrderDetailView: View {
                 .padding()
             
             VStack{
+                //$ sign means var is binding
                 Picker(selection: $pizzaCrust) {
                     ForEach(PizzaCrust.allCases,id:\.self){crust in
                         Text(crust.rawValue).tag(crust)
@@ -102,7 +104,7 @@ struct OrderDetailView: View {
                     .shadow(radius: 1)
             Spacer()
             HStack {
-                Button("Order"){
+                Button("Updates"){
                     updateOrder()
                     if newOrder{
                         orders.addOrder(orderItem: orderItem)
@@ -110,6 +112,7 @@ struct OrderDetailView: View {
                         orders.replaceOrder(id: orderItem.id, with: orderItem)
                     }
                     presentSheet = false
+                    presentAlert = true
                     }
                     .padding()
                     .padding([.leading,.trailing])
@@ -117,21 +120,23 @@ struct OrderDetailView: View {
                     .background(.green,in: Capsule())
                     .font(.title)
                     .padding(.trailing,20)
-                    .shadow(radius:7,x:2,y:2)
-                Button("Cancel"){
-                    presentSheet = false
-                }
-                .padding()
-                .padding([.leading,.trailing])
-                .foregroundColor(.white)
-                .background(.red,in: Capsule())
-                .font(.title)
-                .shadow(radius:7,x:2,y:2)
+                    .alert("HuliPizza company \n \(orderItem.name) updated", isPresented: $presentAlert){}
+                
+//                    .shadow(radius:7,x:2,y:2)
+//                Button("Cancel"){
+//                    presentSheet = false
+//                }
+//                .padding()
+//                .padding([.leading,.trailing])
+//                .foregroundColor(.white)
+//                .background(.red,in: Capsule())
+//                .font(.title)
+//                .shadow(radius:7,x:2,y:2)
             }
         }
         .padding()
         .navigationTitle("Your Order")
-        .background(Color("Surf"))
+        .background(Color("Surf"), in: Rectangle())
         
     }
     

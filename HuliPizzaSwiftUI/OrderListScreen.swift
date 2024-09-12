@@ -51,7 +51,6 @@ struct OrderListScreen: View {
             StatusBarView(showOrders: $showOrders, presentGrid: $presentGrid)
     
  //           if showOrders {
-                //$ sign means var is binding
                 OrderView(orders: orders)
             } .tabItem {
                 Label("Order", systemImage: "cart")
