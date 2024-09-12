@@ -11,6 +11,12 @@ struct MenuGridView: View {
     
     @State private var favourites: [Int] = [-1]
     
+    // Not private
+    @State var selectedItem: MenuItem = noMenuItem
+    
+    //Keep collection of animations used to for coordinating animations between different views.
+    @Namespace private var nSpace
+    
     func menu(id: Int) -> MenuItem {
         menu.first(where: {$0.id == id}) ?? noMenuItem
     }
@@ -20,14 +26,14 @@ struct MenuGridView: View {
     
     let columnLayout2 = Array(repeating: GridItem(spacing: 8), count: 5)
     
-    // Not private
-    @State var selectedItem: MenuItem = noMenuItem
+   
     
     var body: some View {
         VStack {
             LazyVGrid(columns: columnLayout2) {
             ForEach(favourites.sorted(), id:\.self  ) { item in
                 FavoriteTileView(menuItem: menu(id: item))
+                    .matchedGeometryEffect(id: item, in: nSpace)
                     .onLongPressGesture {
                         if let index = favourites.firstIndex(where: { $0 == item }) {
                             favourites.remove(at: index)
@@ -42,6 +48,7 @@ struct MenuGridView: View {
                     ForEach(menu ) { item in
                         if !favourites.contains(item.id) {
                             MenuItemTileView(menuItem: item)
+                            .matchedGeometryEffect(id: item.id, in: nSpace)
                         
                             // order matters here! doubleTap, singleTap then long press
                                 .onTapGesture(count: 2) {
