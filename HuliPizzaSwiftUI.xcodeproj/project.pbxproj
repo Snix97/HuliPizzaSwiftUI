@@ -46,6 +46,8 @@
 		52A587812C9353B800FD3AF7 /* MenuViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5877F2C9353B800FD3AF7 /* MenuViewTwo.swift */; };
 		52A587832C9353F500FD3AF7 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A587822C9353F500FD3AF7 /* MenuDetailView.swift */; };
 		52A587842C9353F500FD3AF7 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A587822C9353F500FD3AF7 /* MenuDetailView.swift */; };
+		52A587892C937E1C00FD3AF7 /* MenuViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A587882C937E1C00FD3AF7 /* MenuViewThree.swift */; };
+		52A5878A2C937E1C00FD3AF7 /* MenuViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A587882C937E1C00FD3AF7 /* MenuViewThree.swift */; };
 		52C0BB702C873576004B17FD /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225112D2C6D694700823B70 /* OrderView.swift */; };
 		52DBD2992C8F3A010025BDCB /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBD2982C8F3A010025BDCB /* StatusBarView.swift */; };
 		52DBD29A2C8F3A010025BDCB /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBD2982C8F3A010025BDCB /* StatusBarView.swift */; };
@@ -103,6 +105,7 @@
 		52A5877C2C9339B100FD3AF7 /* OrderDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		52A5877F2C9353B800FD3AF7 /* MenuViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewTwo.swift; sourceTree = "<group>"; };
 		52A587822C9353F500FD3AF7 /* MenuDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
+		52A587882C937E1C00FD3AF7 /* MenuViewThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewThree.swift; sourceTree = "<group>"; };
 		52DBD2982C8F3A010025BDCB /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		52DBD29B2C8F3FB90025BDCB /* OrderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemView.swift; sourceTree = "<group>"; };
 		52DBD29E2C8F52AB0025BDCB /* MenuItemTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTileView.swift; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 				522511252C6D632900823B70 /* MenuRowView.swift */,
 				52DBD2A42C8F52F70025BDCB /* MenuGridView.swift */,
 				52A5877F2C9353B800FD3AF7 /* MenuViewTwo.swift */,
+				52A587882C937E1C00FD3AF7 /* MenuViewThree.swift */,
 				52A587822C9353F500FD3AF7 /* MenuDetailView.swift */,
 			);
 			path = Menu;
@@ -388,6 +392,7 @@
 				52DBD2A52C8F52F70025BDCB /* MenuGridView.swift in Sources */,
 				5225112E2C6D694700823B70 /* OrderView.swift in Sources */,
 				522511222C6D62CA00823B70 /* MenuItemView.swift in Sources */,
+				52A587892C937E1C00FD3AF7 /* MenuViewThree.swift in Sources */,
 				5218F37F2C8777A9004F2BAF /* OrderModel.swift in Sources */,
 				52DBD29C2C8F3FB90025BDCB /* OrderItemView.swift in Sources */,
 				52A587832C9353F500FD3AF7 /* MenuDetailView.swift in Sources */,
@@ -427,6 +432,7 @@
 				52A587842C9353F500FD3AF7 /* MenuDetailView.swift in Sources */,
 				522511032C6CE73800823B70 /* HuliPizzaSwiftUITests.swift in Sources */,
 				5218F37E2C8777A9004F2BAF /* MenuItem.swift in Sources */,
+				52A5878A2C937E1C00FD3AF7 /* MenuViewThree.swift in Sources */,
 				5218F36D2C8735E4004F2BAF /* MenuRowView.swift in Sources */,
 				5218F3752C8741D8004F2BAF /* RatingsView.swift in Sources */,
 				5218F37C2C8777A9004F2BAF /* MenuModel.swift in Sources */,
