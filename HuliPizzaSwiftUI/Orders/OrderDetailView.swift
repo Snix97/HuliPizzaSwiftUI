@@ -103,12 +103,6 @@ struct OrderDetailView: View {
             Spacer()
             HStack {
                 Button("Order"){
-                    if newOrder {
-                        orders.addOrder(orderItem: orderItem)
-                    } else {
-                        orders.replaceOrder(id: orderItem.id, with: orderItem)
-                    }
-                    presentSheet = false
                     updateOrder()
                     if newOrder{
                         orders.addOrder(orderItem: orderItem)
